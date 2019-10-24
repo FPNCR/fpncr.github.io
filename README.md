@@ -7,3 +7,7 @@
 
 # What is this
 Code for the Functional Programming NCR Home Page
+
+# Where can I see the sources
+
+The `master` branch only contains the built artifacts for the site. The sources are available in the `sources` branch.
