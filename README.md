@@ -2,7 +2,7 @@
   FPNCR Homepage
 </h1>
 <p align="center">
-   <img src="fpncr-logo.png" height="426">
+   <img src="static/fpncr-logo.png" height="426">
 </p>
 
 # What is this
