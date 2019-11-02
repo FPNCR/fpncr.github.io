@@ -5,8 +5,7 @@ import Concur.React (HTML)
 import Concur.React.MUI.DOM as MD
 import Concur.React.DOM as D
 import Concur.React.Props as P
-
-foreign import fpncrLogoPath :: String
+import Static (fpncrLogoPath)
 
 homePage :: forall a. Widget HTML a
 homePage = MD.box []

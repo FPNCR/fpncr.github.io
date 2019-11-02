@@ -10,11 +10,16 @@
   },
   "files": [],
   "scripts": {
-    "build": "spago build",
-    "dev": "spago build && parcel build --public-url ./ index.html",
-    "prod": "rimraf temp && mkdir temp && spago bundle-app --to temp/index.prod.js && java -jar ./closure-compiler/closure-compiler-v20190301.jar --compilation_level ADVANCED_OPTIMIZATIONS --js temp/index.prod.js --js_output_file temp/index.prod.minified.js && cp index.prod.html temp && parcel build --public-url ./ temp/index.prod.html && mv dist/index.prod.html dist/index.html && rimraf temp",
+    "build": "spago build --purs-args '-g sourcemaps'",
     "start": "parcel index.html",
-    "watch": "parcel watch index.html"
+    "watch": "parcel watch index.html",
+
+    "dev": "spago build --purs-args '-g sourcemaps' & parcel index.html",
+
+    "prod": "rimraf temp dist && spago bundle-app --to temp/output/index.js && parcel build --public-url ./ --out-file index.js temp/output/index.js && cp index.html dist/index.html && rimraf temp",
+
+    "prod-closure": "rimraf temp dist && spago bundle-app --to temp/index.spago.js && java -jar ./closure-compiler/closure-compiler-v20190301.jar --compilation_level SIMPLE --js temp/index.spago.js --js_output_file temp/output/index.js && parcel build --public-url ./ temp/output/index.js --out-file index.js && rimraf temp && cp index.html dist/index.html"
+
   },
   "dependencies": {
     "@material-ui/core": "^4.5.1",

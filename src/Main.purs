@@ -2,9 +2,10 @@ module Main where
 
 import Prelude
 
-import Pages.Home as Home
 import Concur.React.Run (runWidgetInDom)
 import Effect (Effect)
+import Pages.Home as Home
 
 main :: Effect Unit
-main = runWidgetInDom "main" Home.page
+main = do
+  runWidgetInDom "main" Home.page
